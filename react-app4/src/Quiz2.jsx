@@ -15,9 +15,30 @@ function Header() {
 function Navbar() {
   return (
     <div>
-      <p>Home</p>
-      <p>About</p>
-      <p>Contact</p>
+      <Home></Home>
+      <About></About>
+      <Contact></Contact>
+    </div>
+  );
+}
+function Contact() {
+  return (
+    <div>
+      Contact
+    </div>
+  );
+}
+function Home() {
+  return (
+    <div>
+      Home
+    </div>
+  );
+}
+function About() {
+  return (
+    <div>
+      About
     </div>
   );
 }

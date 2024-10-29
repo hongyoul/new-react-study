@@ -15,8 +15,16 @@ function Header() {
 function Section() {
   return (
     <div>
-      <p>Content Component</p>
-      <p>Content Component</p>
+    <Content></Content>
+    <Content></Content>
+    </div>
+  );
+}
+
+function Content() {
+  return (
+    <div>
+      Content Component
     </div>
   );
 }
