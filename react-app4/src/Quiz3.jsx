@@ -12,19 +12,17 @@ function Header() {
   );
 }
 
+function Content() {
+  return (
+    <div> Content Component </div>
+  );
+}
+
 function Section() {
   return (
     <div>
     <Content></Content>
     <Content></Content>
-    </div>
-  );
-}
-
-function Content() {
-  return (
-    <div>
-      Content Component
     </div>
   );
 }

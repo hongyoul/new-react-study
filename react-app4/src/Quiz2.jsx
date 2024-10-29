@@ -12,33 +12,29 @@ function Header() {
   );
 }
 
+function Home() {
+  return (
+    <div> Home </div>
+  );
+}
+function About() {
+  return (
+    <div> About </div>
+  );
+}
+
+function Contact() {
+  return (
+    <div> Contact </div>
+  );
+}
+
 function Navbar() {
   return (
     <div>
       <Home></Home>
       <About></About>
       <Contact></Contact>
-    </div>
-  );
-}
-function Contact() {
-  return (
-    <div>
-      Contact
-    </div>
-  );
-}
-function Home() {
-  return (
-    <div>
-      Home
-    </div>
-  );
-}
-function About() {
-  return (
-    <div>
-      About
     </div>
   );
 }
