@@ -6,18 +6,28 @@ import './App.css';
 function Header() {
   return (
     <header>
-        <h1>Section Component</h1>
+        <h1><a href='/'>React</a></h1>
     </header>
       
   );
 }
 
-function Section() {
+function Nav() {
   return (
-    <div>
-      <p>Content Component</p>
-      <p>Content Component</p>
-    </div>
+    <ol>
+      <li><a href='/read/1'>html</a></li>
+      <li><a href='/read/2'>css</a></li>
+      <li><a href='/read/3'>Js</a></li>
+    </ol>
+  );
+}
+
+function Article() {
+  return(
+    <article>
+      <h2>welcome</h2>
+      Hello, WEB
+    </article>
   );
 }
 
@@ -25,9 +35,10 @@ function App() {
   return (
     <div className="App">
     <Header></Header>
-    <Section></Section>
     <Header></Header>
-    <Section></Section>
+    <Header></Header>
+    <Nav></Nav>
+    <Article></Article>
     </div>
   );
 }

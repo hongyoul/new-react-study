@@ -6,18 +6,15 @@ import './App.css';
 function Header() {
   return (
     <header>
-        <h1>Section Component</h1>
+        <h1>ltem List</h1>
     </header>
       
   );
 }
 
-function Section() {
+function Item() {
   return (
-    <div>
-      <p>Content Component</p>
-      <p>Content Component</p>
-    </div>
+    <p>ltem Component</p>
   );
 }
 
@@ -25,9 +22,11 @@ function App() {
   return (
     <div className="App">
     <Header></Header>
-    <Section></Section>
-    <Header></Header>
-    <Section></Section>
+    <Item></Item> 
+    <Item></Item>
+    <Item></Item>
+    <Item></Item>
+    <Item></Item>
     </div>
   );
 }
