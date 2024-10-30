@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
-// 이벤트 처리방법
+import { useState } from 'react';
 
 function Header(props) {
 
@@ -9,8 +8,8 @@ function Header(props) {
     <header>
         <h1><a href='/' onClick={
           (event) => {
-            event.preventDefault(); // 페이지 이동방지
-            props.onChangeMode(); // props로 전달 받은 이벤트 함수 실행
+            event.preventDefault(); 
+            props.onChangeMode(); 
           }
         }>{props.title}</a></h1>
     </header>
@@ -27,9 +26,9 @@ function Nav(props) {
     lis.push(<li key={t.id}>
       <a href={'/read/'+t.id} id={t.id} onClick={
         (event) => {
-          event.preventDefault(); // 이벤트 객체로 페이지 이동방지
-          console.log(event.target.id); // 클릭했을 때 열릴 위치를 명시
-          props.onChangeMode(event.target.id); // props로 전달받은 함수 호출
+          event.preventDefault(); 
+          // console.log(event.target.id); 
+          props.onChangeMode(event.target.id); 
         }
       }>{t.title}
       </a>
@@ -45,8 +44,6 @@ function Nav(props) {
 
 function Article(props) {
 
-  console.log(props);
-
   return( 
     <article>
       <h2>{props.title}</h2>
@@ -57,29 +54,48 @@ function Article(props) {
 
 function App() {
 
-  
+  //모드를 결정하는 변수(기존의 변수)
+  // let mode ="WELCOME";
+
+  // mode를 state로 생성
+  // state: 상태를 관리하며 컴포넌트를 새로 생성하는 역할
+  let [mode, setState] = useState('WELCOME'); // 초기값 
+
+  console.log(mode, setState);
+
+  // 본문을 저장할 변수
+  let content = null;
+
   const topics = [
     {id:1, title:'html', body:'html is ...'},
     {id:2, title:'css', body:'css is ...'},
     {id:3, title:'javascript', body:'javascript is ...'},
   ];
+
+  // 모드에 따라 Article 컴포넌트를 생성
+  if(mode === "WELCOME") {
+    content = <Article title="Welcome" body="Hello, Web"></Article>
+
+  } else if(mode === "READ"){
+    content = <Article title="READ" body="Hello, READ"></Article>
+  }
+  
   return (
     <div>
-    {/* Header 컴포넌트에 이벤트 기능 추가 */}
+      {/* Header를 클릭하면 모드가 WELCOME으로 변경 */}
     <Header title="Web" onChangeMode={
       () => {
-        alert('hi');
+        setState('WELCOME');
       }
     }></Header>
 
-    {/* Nav 컴포넌트에 이벤트 기능 추가 클릭하면 해당 id가 경고창으로 출력 */}
+    {/* Nav를 클릭하면 모드가 READ으로 변경 */}
     <Nav topics={topics} onChangeMode={
       (id) => {
-        alert(id);
+        setState('READ');
       }
     }></Nav>
-
-    <Article title="Welcome" body="Hello, Web"></Article>
+    {content}
     </div>
   );
 }
