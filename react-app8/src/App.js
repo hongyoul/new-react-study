@@ -135,6 +135,7 @@ function App() {
     // Create 컴포넌트에서 등록 버튼을 클릭하면 게시물이 등럭되는 이벤트 추가
     content = <Create onCreate={
       (title, body) => {
+        
         // 기존 배열으 복사하여 새로운 배열로 생성
         const newTopics = [...topics];
         // console.log(title, body);
