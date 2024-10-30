@@ -44,7 +44,7 @@ function Article(props) {
 
   console.log(props);
 
-  return(
+  return( 
     <article>
       <h2>{props.title}</h2>
       {props.body}
