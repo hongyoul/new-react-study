@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+// 이벤트 처리방법
+
 function Header(props) {
 
   return (
