@@ -145,6 +145,10 @@ function App() {
 
         setTopics(newTopics); // 100번지 -> 200번지
 
+        // 등록이 정상적으로 끝났으면 상세화면으로 이동
+        setMode('READ');
+        setId(nextid);
+
         // 다음 아이디를 1만큼 증가 시키기
         setNextid(nextid +1);
       }
