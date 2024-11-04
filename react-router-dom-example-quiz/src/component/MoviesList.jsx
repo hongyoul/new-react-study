@@ -7,7 +7,7 @@ function MoviesList() {
   let params = useParams();
 
   let findMovies = data.find((movies)=>{
-    if(movies.id === Number(params.movies_id)) {
+    if(movies.+id === Number(params.movies_id)) {
       return true;
     }
   });
