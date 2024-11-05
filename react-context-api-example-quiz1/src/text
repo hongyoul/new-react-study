@@ -1,0 +1,3 @@
+useState: State를 관라하며 화면을 렌더링하는 도구
+
+useReducer: State를 관라하며 상태 변경 로직을 한곳에서 처리하는 도구
