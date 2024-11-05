@@ -1,3 +1,7 @@
+import { useDispatch } from "react-redux";
+
+// useDispatch: 스토어에 있는 state를 변경하는 함수
+
 export const Right1 = () => {
   
   return(
@@ -19,12 +23,25 @@ const Right2 = () => {
   );
 }
 
+// + 버튼을 클릭하면 num이 1 증가되도록 처리
 const Right3 = () => {
   
+  // redux 스토어에서 dispatch함수 가져오기
+  const dispatch = useDispatch();
+
   return(
     <div>
       <h1>Right3</h1>
-      <input type="button" value="+"></input>
+      <input type="button" value="+" onClick={ ()=>{
+        // 디스패치로 'PLUS' 액션을 전달
+        // dispatch은 reducer를 호출하기 위해 있는 것
+        dispatch({ type: 'PLUS' });
+      } }></input>
+      <input type="button" value="-" onClick={ ()=>{
+        // 디스패치로 'PLUS' 액션을 전달
+        // dispatch은 reducer를 호출하기 위해 있는 것
+        dispatch({ type: 'DOWN' });
+      } }></input>
     </div>
   );
 }

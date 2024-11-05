@@ -9,13 +9,42 @@ import { Provider } from 'react-redux';
 
 // Provider: 하위 컴포넌트들에게 스토어를 전달하는 역할
 
+// state를 생성하기 위해 redux를 사용
+
+// state 변경 로직을 가지고 있는 함수를 정의
+// 리덕스에서 state를 관리할 때는 object로 관리
+function reducer(oldState, action) {
+  
+  // state 초기값 설정
+  if (oldState === undefined) {
+    return{num:1}; // 새로운 state 반환
+  } else {
+
+    if (action.type === 'PLUS') {
+
+      // oldState 복제본 생성
+      const newState = {...oldState}
+      newState.num++; // 증감연산자 사용
+      return newState;
+    } else if (action.type === 'DOWN') {
+      const newState = {...oldState}
+      newState.num--;
+      return newState;
+    }
+  }
+}
+
+// redux 스토어 생성(스토어: state를 전역적으로 관리하는 저장소)
+const store = createStore(reducer);
+
 function App() {
   return (
-    <div class='root'>
-      
+    <div className='root'>
+      {/* 스토어를 사용하기 위해 자식들을 Provider로 감싸기 */}
+      <Provider store={store}>
       <Left1></Left1>
       <Right1></Right1>
-      
+      </Provider>
     </div>
   );
 }
