@@ -33,8 +33,8 @@ const Left3 = () => {
 
   return(
     <div>
+      {/* 꺼낸 state 출력 */}
       <h1>Left3 : {num}</h1>
-      
     </div>
   );
 }
