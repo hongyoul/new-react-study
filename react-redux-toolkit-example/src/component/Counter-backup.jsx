@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { counterSlice } from '../store/countSlice'; 
 
 // useSelector: 스토어에서 state를 가져오는 함수
 // useDispatch: 스토어에서 state를 변경하는 함수
@@ -22,13 +21,10 @@ export const Counter = () => {
   return (
     <div>
       <button onClick={()=>{
-
+        // 디스패치 'UP' 타입 액션 전달
+        // 버튼을 클릭하면 2만큼 증가
         // 타입수정: 슬라이스 이름/ 액션타입
-        // dispatch( { type: 'counterSlice/up', step: 2 } );
-
-        // 액션타입 대신 액션 함수 사용하기
-        // 증가시킬 값은 up함수의 인자로 넣기
-        dispatch( counterSlice.actions.up(2) );
+        dispatch( { type: 'counterSlice/up', step: 2 } );
       }}>+</button>
       {num}
     </div>
